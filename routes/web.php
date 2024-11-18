@@ -18,6 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//admin dashboard
+
+Route::get('/admin/dashboard', function () {
+    return view('backend.admin_dashboard');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
