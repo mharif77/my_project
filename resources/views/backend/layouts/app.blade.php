@@ -15,11 +15,14 @@
 </head>
 
 <body>
-    <!--Preloader-->
-    <div class="preloader-it">
+
+
+    <!-- Preloader-->
+    <!-- <div class="preloader-it">
         <div class="la-anim-1"></div>
-    </div>
-    <!--/Preloader-->
+    </div> -->
+    <!--/Preloader -->
+
     <div class="wrapper">
         <!-- Top Menu Items -->
         @include('backend.layouts.topmenu')

@@ -35,3 +35,21 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+
+Route::middleware('guest:admin')->prefix('admin')->group( function () {
+
+    Route::get('login', [App\Http\Controllers\Auth\Admin\LoginController::class, 'login'])->name('admin.login');
+    Route::post('login', [App\Http\Controllers\Auth\Admin\LoginController::class, 'check_user']);
+
+   
+});
+
+Route::middleware('auth:admin')->prefix('admin')->group( function () {
+
+    Route::post('logout', [App\Http\Controllers\Auth\Admin\LoginController::class, 'logout'])->name('admin.logout');
+
+    Route::view('/admin/dashboard','backend.admin_dashboard');
+
+});
