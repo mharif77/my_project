@@ -132,7 +132,7 @@
 					<div class="col-lg-12">
                         <div class="panel panel-default card-view">
 							<div class="panel-heading">
-								<h5>Admin Dashboard</h5>
+								<h5>Doctor Dashboard</h5>
 							</div>
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">

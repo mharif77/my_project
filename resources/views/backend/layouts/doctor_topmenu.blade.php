@@ -1,6 +1,7 @@
+Doctor Top menu
 <nav class="navbar navbar-inverse navbar-fixed-top">
 				<a id="toggle_nav_btn" class="toggle-left-nav-btn inline-block mr-20 pull-left" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
-				<a href="index.html"><img class="brand-img pull-left" src="{{asset('dist/img/logo.png')}}" alt="brand"/></a>
+				<a href="index.html"><img class="brand-img pull-left" src="dist/img/logo.png" alt="brand"/></a>
 				<ul class="nav navbar-right top-nav pull-right">
 					<li>
 						<a href="javascript:void(0);" data-toggle="collapse" data-target="#site_navbar_search">
@@ -64,7 +65,7 @@
 								<div class="streamline message-box message-nicescroll-bar">
 									<div class="sl-item">
 										<div class="sl-avatar avatar avatar-sm avatar-circle">
-											<img class="img-responsive img-circle" src="{{asset('dist/img/user.png')}}" alt="avatar"/>
+											<img class="img-responsive img-circle" src="dist/img/user.png" alt="avatar"/>
 										</div>
 										<div class="sl-content">
 											<a href="javascript:void(0)" class="inline-block capitalize-font  pull-left">Sandy Doe</a>
@@ -113,7 +114,7 @@
 									<hr/>
 									<div class="sl-item">
 										<div class="sl-avatar avatar avatar-sm avatar-circle">
-											<img class="img-responsive img-circle" src="{{asset('dist/img/user4.png')}}" alt="avatar"/>
+											<img class="img-responsive img-circle" src="dist/img/user4.png" alt="avatar"/>
 										</div>
 										<div class="sl-content">
 											<a href="javascript:void(0)" class="inline-block capitalize-font  pull-left">Sandy Doe</a>
@@ -127,7 +128,7 @@
 						</ul>
 					</li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="{{('dist/img/user1.png')}}" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
+						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="dist/img/user1.png" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
 						<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
 							<li>
 								<a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -143,12 +144,11 @@
 							</li>
 							<li class="divider"></li>
 							<li>
-								<form action="{{route('admin.logout')}}" method="post">
-								@csrf
-
-								<button type="submit" class="btn btn-success">Logout</button>
-								</form>
-								<!-- <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a> -->
+								<form action="{{route('doctor.logout')}}" method="post">
+									@csrf
+									<button type="submit"><i class="fa fa-fw fa-power-off"></i> Doctor Log Out</button>
+								</form>	
+							<!-- <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a> -->
 							</li>
 						</ul>
 					</li>
