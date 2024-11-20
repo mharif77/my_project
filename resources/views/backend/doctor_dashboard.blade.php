@@ -136,7 +136,7 @@
 							</div>
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">
-									<img src="{{asset('images/welcome.jpg')}}" style="width:100%" alt="">
+									<img src="{{asset('images/welcome.jpeg')}}" style="width:100%" alt="">
 								</div>
 							</div>
 						</div>

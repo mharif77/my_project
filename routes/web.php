@@ -64,3 +64,20 @@ Route::middleware('auth:doctor')->prefix('doctor')->group( function () {
     Route::view('/dashboard','backend.doctor_dashboard');
 
 });
+
+
+
+// Employee  Routes
+Route::middleware('guest:employee')->prefix('employee')->group( function () {
+
+    Route::get('login', [App\Http\Controllers\Auth\Employee\LoginController::class, 'login'])->name('employee.login');
+    Route::post('login', [App\Http\Controllers\Auth\Employee\LoginController::class, 'check_user']);
+
+});
+Route::middleware('auth:employee')->prefix('employee')->group( function () {
+
+    Route::post('logout', [App\Http\Controllers\Auth\Employee\LoginController::class, 'logout'])->name('employee.logout');
+    
+    Route::view('/dashboard','backend.employee_dashboard');
+
+});

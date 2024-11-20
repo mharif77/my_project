@@ -23,6 +23,8 @@
 			 	@include('backend.layouts.topmenu')
 			 @elseif(Auth()->guard('doctor')->check())	
 			 	@include('backend.layouts.doctor_topmenu')
+				 @elseif(Auth()->guard('employee')->check())	
+			 	@include('backend.layouts.employee_topmenu')
 			 @endif	
 			<!-- /Top Menu Items -->
 			
@@ -31,6 +33,8 @@
 			 	@include('backend.layouts.leftbar')
 			 @elseif(Auth()->guard('doctor')->check())	
 			 	@include('backend.layouts.doctor_leftbar')
+				 @elseif(Auth()->guard('employee')->check())	
+			 	@include('backend.layouts.employee_leftbar')
 			 @endif
 
 		
