@@ -140,11 +140,11 @@
         <div class="col-lg-12">
             <div class="panel panel-default card-view">
                 <div class="panel-heading">
-                    <h5>Doctor Dashboard</h5>
+                    <h5>Eployee Dashboard</h5>
                 </div>
                 <div class="panel-wrapper collapse in">
                     <div class="panel-body">
-                        <img src="{{asset('images/welcome.jpeg')}}" style="width:100%" alt="">
+                        <img src="{{asset('images/4.jpg')}}" style="width:100%" alt="">
                     </div>
                 </div>
             </div>
