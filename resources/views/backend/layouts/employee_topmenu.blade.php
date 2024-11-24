@@ -136,7 +136,7 @@ Doctor Top menu
         </li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="dist/img/user1.png"
-                    alt="user_auth" class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
+                    alt="Employee" class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
             <ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                 <li>
                     <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -154,7 +154,8 @@ Doctor Top menu
                 <li>
                     <form action="{{route('doctor.logout')}}" method="post">
                         @csrf
-                        <button type="submit"><i class="fa fa-fw fa-power-off"></i> Doctor Log Out</button>
+                        <button type="button" class="btn btn-success">Employee Log Out</button>
+                        <!-- <button  class="btn btn success"><i class="fa fa-fw fa-power-off"></i> Employee Log Out</button> -->
                     </form>
                     <!-- <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a> -->
                 </li>

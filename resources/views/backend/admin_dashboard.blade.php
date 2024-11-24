@@ -25,7 +25,7 @@
 						<div class="panel panel-default card-view">
 							<div class="panel-heading">
 								<div class="pull-left">
-									<h6 class="panel-title txt-dark">Literacy</h6>
+									<h6 class="panel-title txt-dark">Category</h6>
 								</div>
 								<div class="clearfix"></div>
 							</div>
@@ -51,7 +51,7 @@
 						<div class="panel panel-default card-view">
 							<div class="panel-heading">
 								<div class="pull-left">
-									<h6 class="panel-title txt-dark">Population</h6>
+									<h6 class="panel-title txt-dark"> Products</h6>
 								</div>
 								<div class="clearfix"></div>
 							</div>
@@ -77,7 +77,7 @@
 						<div class="panel panel-default card-view">
 							<div class="panel-heading">
 								<div class="pull-left">
-									<h6 class="panel-title txt-dark">Animal growth</h6>
+									<h6 class="panel-title txt-dark">Expenses </h6>
 								</div>
 								<div class="clearfix"></div>
 							</div>
@@ -103,7 +103,7 @@
 						<div class="panel panel-default card-view">
 							<div class="panel-heading">
 								<div class="pull-left">
-									<h6 class="panel-title txt-dark">total waste</h6>
+									<h6 class="panel-title txt-dark">point of stock</h6>
 								</div>
 								<div class="clearfix"></div>
 							</div>
@@ -136,7 +136,7 @@
 							</div>
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">
-									<img src="{{asset('images/welcome.jpg')}}" style="width:100%" alt="">
+									<img src="{{asset('images/7.jpg')}}" style="width:100%" alt="">
 								</div>
 							</div>
 						</div>

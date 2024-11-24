@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function index()
     {
         $items = Product::orderBy('id','desc',)->get();
-        return view('backend.Product.index', compact('items'));
+        return view('backend.product.index', compact('items'));
     }
 
     /**
@@ -22,7 +22,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.product.create');
     }
 
     /**
@@ -30,7 +30,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product;
+        $product->name = $request->product;
+        $product->details = $request->details;
+
+        // return $specialist->save();
+
+        
+        return redirect()->route('product.index')->with('msg', "successfully created");
     }
 
     /**
@@ -46,7 +53,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('backend.product.edit', compact('product'));
     }
 
     /**
@@ -54,7 +61,13 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+         // return $product;
+        // return  $request;
+
+        $product->name = $request->product;
+        $product->details = $request->details;
+        $product->update();
+        return redirect()->route('product.index')->with('msg', "updated successfully");
     }
 
     /**
@@ -62,6 +75,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect()->route('product.index')->with('msg', 'Deleted Successfully');
     }
 }

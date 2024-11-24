@@ -32,7 +32,7 @@
                             <div class="panel panel-default card-view mb-0">
                                 <div class="panel-heading">
                                     <div class="pull-left">
-                                        <h6 class="panel-title txt-dark">Sign In</h6>
+                                        <h6 class="panel-title txt-dark">Admin Sign In</h6>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -65,15 +65,7 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="form-group">
-                                                            <div class="checkbox checkbox-success pr-10 pull-left">
-                                                                <input id="checkbox_2" required="" type="checkbox">
-                                                                <label for="checkbox_2"> keep me logged in </label>
-                                                            </div>
-                                                            <a class="capitalize-font txt-danger block pt-5 pull-right"
-                                                                href="#">forgot password</a>
-                                                            <div class="clearfix"></div>
-                                                        </div>
+                                                       
                                                         <div class="form-group">
                                                             <button type="submit" class="btn btn-success btn-block">sign
                                                                 in</button>

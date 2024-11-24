@@ -13,4 +13,8 @@ class Product extends Model
         
         
     ];
+
+    public function Employee(){
+        return $this-> hasMany(Product::class);
+    }
 }

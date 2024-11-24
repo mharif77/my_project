@@ -4,20 +4,7 @@
             <a class="active" href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard_dr"><i
                     class="icon-picture mr-10"></i>Dashboard <span class="pull-right"><span
                         class="label label-success mr-10">4</span><i class="fa fa-fw fa-angle-down"></i></span></a>
-            <ul id="dashboard_dr" class="collapse collapse-level-1">
-                <li>
-                    <a href="index.html">Analytical</a>
-                </li>
-                <li>
-                    <a class="active" href="index2.html">Demographic</a>
-                </li>
-                <li>
-                    <a href="index3.html">Project</a>
-                </li>
-                <li>
-                    <a href="index4.html">Classic</a>
-                </li>
-            </ul>
+            
         </li>
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#ecom_dr"><i

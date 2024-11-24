@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
+         \App\Models\Product::factory()->create();
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
@@ -35,11 +35,11 @@ class DatabaseSeeder extends Seeder
         //     ]);
 
 
-            \App\Models\Employee::create(
-                [
-                   'name' =>'MD RONI AHMED',
-                   'email' => 'roni@gmail.com',
-                   'password' => Hash::make('admin123')
-                ]);
+            // \App\Models\Employee::create(
+            //     [
+            //        'name' =>'MD RONI AHMED',
+            //        'email' => 'roni@gmail.com',
+            //        'password' => Hash::make('admin123')
+            //     ]);
     }
 }
