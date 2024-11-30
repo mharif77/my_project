@@ -7,7 +7,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
 <!-- Data table CSS -->
 <link href="{{asset('vendors/bower_components/datatables/media/css/jquery.dataTables.min.css')}}" rel="stylesheet"
-    type="text/css" />
+	type="text/css" />
 
 <!-- Custom CSS -->
 <link href="{{asset('dist/css/style.css')}}" rel="stylesheet" type="text/css">
@@ -43,55 +43,55 @@
 @section('content')
 <div class="container-fluid">
 
-    <!-- Title -->
-    <div class="row heading-bg bg-green">
-        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+	<!-- Title -->
+	<div class="row heading-bg bg-green">
+		<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 
-            <h5 class="txt-light">export</h5>
-        </div>
-        <!-- Breadcrumb -->
-        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-            <ol class="breadcrumb">
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="#"><span>table</span></a></li>
-                <li class="active"><span>Export</span></li>
-            </ol>
-        </div>
-        <!-- /Breadcrumb -->
-    </div>
-    <!-- /Title -->
+			<h5 class="txt-light">export</h5>
+		</div>
+		<!-- Breadcrumb -->
+		<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+			<ol class="breadcrumb">
+				<li><a href="index.html">Dashboard</a></li>
+				<li><a href="#"><span>table</span></a></li>
+				<li class="active"><span>Export</span></li>
+			</ol>
+		</div>
+		<!-- /Breadcrumb -->
+	</div>
+	<!-- /Title -->
 
-    <!-- Row -->
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="panel panel-default card-view">
-                <div class="panel-heading">
-                    <div class="pull-left">
-                        @if(session('msg'))
-                            <div class="alert alert-success">{{session('msg')}}</div>
-                        @endif
-                        <h6 class="panel-title txt-dark">category</h6>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="panel-wrapper collapse in">
-                    <div class="panel-body">
-                        <div class="table-wrap">
-                            <div class="table-responsive">
+	<!-- Row -->
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel panel-default card-view">
+				<div class="panel-heading">
+					<div class="pull-left">
+						@if(session('msg'))
+							<div class="alert alert-success">{{session('msg')}}</div>
+						@endif
+						<h6 class="panel-title txt-dark">category</h6>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="panel-wrapper collapse in">
+					<div class="panel-body">
+						<div class="table-wrap">
+							<div class="table-responsive">
+								
 
-                                <img src="{{asset($product->image)}}" height="300px" width="300px" alt="">
-                                <h1>{{$product->name}}</h1>
-                                <h2>{{$product->id}}</h2>
-                                <h4>{{$product->price}}</h4>
-                                <h4>{{$product->product_code}}</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Row -->
+                    <h1>{{$category->name}}</h1>
+                    <h2>{{$category->id}}</h2>
+                    <h4>{{$category->details}}</h4>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Row -->
 </div>
 
 @endsection

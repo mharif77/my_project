@@ -47,7 +47,7 @@
 	<div class="row heading-bg bg-green">
 		<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 
-			<h5 class="txt-light">Export</h5>
+			<h5 class="txt-light">export</h5>
 		</div>
 		<!-- Breadcrumb -->
 		<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
@@ -70,7 +70,7 @@
 						@if(session('msg'))
 							<div class="alert alert-success">{{session('msg')}}</div>
 						@endif
-						<h6 class="panel-title txt-dark">Export</h6>
+						<h6 class="panel-title txt-dark">category</h6>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -82,12 +82,8 @@
 									<thead>
 										<tr>
 											<th>ID</th>
-											<th>Name</th>
-											<th>Image</th>
-											<th>product_code</th>
-											<th>price</th>
-											<th>quantity</th>
-											<th>category</th>
+											<th>Category Name</th>
+											<th>Details</th>
 											<th>Action</th>
 										</tr>
 									</thead>
@@ -97,24 +93,19 @@
 											<tr>
 												<td>{{$loop->iteration}}</td>
 												<td>{{$item->name}}</td>
-												<td><img src="{{asset($item->image)}}" width="100px" alt=""></td>
-												<td>{{$item->product_code}}</td>
-												<td>{{$item->price}}</td>
-												<td>{{$item->quantity}}</td>
-												<td>{{$item->category->name}}</td>
+												<td>{{$item->details}}</td>
 												<td>
-													
 
 
-													<form action="{{route('product.destroy', $item->id)}}" method="post">
+
+													<form action="{{route('category.destroy', $item->id)}}" method="post">
 														@csrf
 														@method('DELETE')
-														<a href="{{route('product.show', $item->id)}}"
-														class="btn btn-info">Show</a>
+														<a href="{{route('category.show', $item->id)}}"
+															class="btn btn-info">show</a>
 
-														<a href="{{route('product.edit', $item->id)}}"
-														class="btn btn-success">Edit</a>
-
+														<a href="{{route('category.edit', $item->id)}}"
+															class="btn btn-info">Edit</a>
 														<button class="btn btn-danger" type="submit"
 															name="submit">Delete</button>
 													</form>

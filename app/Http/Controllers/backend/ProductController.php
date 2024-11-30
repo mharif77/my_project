@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $items = Product::orderBy('id','desc',)->get();
+        $items = Product::orderBy('id', 'desc', )->get();
         return view('backend.product.index', compact('items'));
     }
 
@@ -22,7 +23,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('backend.product.create');
+        $categories = Category::orderBy('id', 'desc', )->get();
+        return view('backend.product.create', compact('categories'));
     }
 
     /**
@@ -30,13 +32,38 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'product_code' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'price' => 'required',
+            'quantity' => 'required',
+            'category_id' => 'required',
+
+
+        ]);
+
+        if ($image = $request->file('image')) {
+            $destinationPath = 'images/';
+            $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $postImage);
+            $photo = $destinationPath . $postImage;
+        } else {
+            $photo = 'images/nophoto.jpg';
+        }
+
         $product = new Product;
-        $product->name = $request->product;
-        $product->details = $request->details;
+        $product->name = $request->name;
+        $product->product_code = $request->product_code;
+        $product->image = $photo;
+        $product->price = $request->price;
+        $product->quantity = $request->quantity;
+        $product->category_id = $request->category_id;
 
         // return $specialist->save();
+        $product->save();
 
-        
+
         return redirect()->route('product.index')->with('msg', "successfully created");
     }
 
@@ -45,7 +72,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('backend.product.show', compact('product'));
     }
 
     /**
@@ -53,7 +80,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('backend.product.edit', compact('product'));
+        $categories = Category::orderBy('id', 'desc', )->get();
+        return view('backend.product.edit', compact('product', 'categories'));
     }
 
     /**
@@ -61,13 +89,39 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-         // return $product;
-        // return  $request;
 
-        $product->name = $request->product;
-        $product->details = $request->details;
+        $request->validate([
+            'name' => 'required',
+            'product_code' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'price' => 'required',
+            'quantity' => 'required',
+            'category_id' => 'required',
+
+
+        ]);
+
+        if ($image = $request->file('image')) {
+            $destinationPath = 'images/';
+            $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $postImage);
+            $photo = $destinationPath . $postImage;
+        } else {
+            $photo = 'images/nophoto.jpg';
+        }
+
+        $product->name = $request->name;
+        $product->product_code = $request->product_code;
+        $product->image = $photo;
+        $product->price = $request->price;
+        $product->quantity = $request->quantity;
+        $product->category_id = $request->category_id;
+
+        // return $specialist->save();
         $product->update();
-        return redirect()->route('product.index')->with('msg', "updated successfully");
+
+
+        return redirect()->route('product.index')->with('msg', "successfully Updated");
     }
 
     /**

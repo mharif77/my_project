@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -50,6 +51,7 @@ Route::middleware('auth:admin')->prefix('admin')->group( function () {
     Route::view('/dashboard','backend.admin_dashboard');
 
     Route::resource('/product', ProductController::class);
+    Route::resource('/category', CategoryController::class);
 
 });
 

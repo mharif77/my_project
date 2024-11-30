@@ -9,12 +9,22 @@ class Product extends Model
 {
     protected $fillable = [
         'name',
-        'details'
-        
-        
+        'product_code',
+        'image',
+        'price',
+        'quantity',
+        'category_id',
+
+
     ];
 
-    public function Employee(){
-        return $this-> hasMany(Product::class);
+    public function Employee()
+    {
+        return $this->hasMany(Product::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

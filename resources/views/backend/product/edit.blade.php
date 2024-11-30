@@ -79,42 +79,109 @@
                             <div class="col-sm-12 col-xs-12">
                                 <div class="form-wrap">
                                     <form class="form-horizontal" method="post"
-                                        action="{{route('product.update', $product->id)}}">
+                                        action="{{route('product.update', $product->id)}}"
+                                        enctype="multipart/form-data">
                                         @csrf
-                                        @method ('PUT')
+                                        @method('PUT')
                                         <div class="form-group">
-                                            <label for="exampleInputuname_4"
-                                                class="col-sm-3 control-label">Specialist</label>
+                                            <label for="exampleInputuname_4" class="col-sm-3 control-label">name</label>
                                             <div class="col-sm-9">
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" name="product"
-                                                        value="{{$product->name}}" id="exampleInputuname_4"
+                                                    <input type="text" class="form-control" name="name"
+                                                        id="exampleInputuname_4" value="{{$product->name}}"
                                                         placeholder="Username">
                                                     <div class="input-group-addon"><i class="icon-user"></i></div>
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="exampleInputEmail_4"
-                                                class="col-sm-3 control-label">Details</label>
+                                            <label for="exampleInputuname_4"
+                                                class="col-sm-3 control-label">Product_Code</label>
                                             <div class="col-sm-9">
                                                 <div class="input-group">
-                                                    <textarea type="text" name="details" class="form-control"
-                                                        placeholder="Enter details"
-                                                        rows="10">{{$product->details}}</textarea>
-                                                        <div class="input-group-addon"><i class="icon-user"></i></div>
+                                                    <input type="text" value="{{$product->product_code}}"
+                                                        class="form-control" name="product_code"
+                                                        id="exampleInputuname_4" placeholder="Username">
+                                                    <div class="input-group-addon"><i class="icon-user"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
 
+                                        <div class="form-group">
+                                            <label for="exampleInputuname_4"
+                                                class="col-sm-3 control-label">image</label>
+                                            <div class="col-sm-9">
+                                                <div class="input-group">
+                                                    <input type="file" class="form-control" name="image"
+                                                        id="exampleInputuname_4" placeholder="Username">
+                                                    <img src="{{asset($product->image)}}" width="100px" alt="">
+                                                    <div class="input-group-addon"><i class="icon-user"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputuname_4"
+                                                class="col-sm-3 control-label">Price</label>
+                                            <div class="col-sm-9">
+                                                <div class="input-group">
+                                                    <input type="text" value="{{$product->price}}" class="form-control"
+                                                        name="price" id="exampleInputuname_4" placeholder="Username">
+                                                    <div class="input-group-addon"><i class="icon-user"></i></div>
                                                 </div>
                                             </div>
                                         </div>
 
 
-
-                                        <div class="form-group mb-0">
-                                            <div class="col-sm-offset-3 col-sm-9">
-                                                <button type="submit" class="btn btn-info ">UPDATE</button>
+                                        <div class="form-group">
+                                            <label for="exampleInputuname_4"
+                                                class="col-sm-3 control-label">Quantity</label>
+                                            <div class="col-sm-9">
+                                                <div class="input-group">
+                                                    <input type="text" value="{{$product->quantity}}"
+                                                        class="form-control" name="quantity" id="exampleInputuname_4"
+                                                        placeholder="Username">
+                                                    <div class="input-group-addon"><i class="icon-user"></i></div>
+                                                </div>
                                             </div>
                                         </div>
+
+
+                                        <div class="form-group">
+                                            <label for="exampleInputuname_4"
+                                                class="col-sm-3 control-label">Category</label>
+                                            <div class="col-sm-9">
+                                                <select name="category_id" id="" class="form-control">
+                                                    <option value="">Select one</option>
+                                                    @foreach($categories as $category)	
+                                                        <option value="{{$category->id}}"
+                                                            @selected(old('category_id') == $category->id)>
+                                                            {{$category->name}}
+                                                        </option>
+
+                                                        <option value="{{$category->id}}" @selected(old('category_id') ?? $product->category_id == $category->id)>
+                                                            {{$product->category->name}}
+                                                        </option>
+                                                    @endforeach
+
+                                                </select>
+                                                @error('category_id')
+                                                    <div class="alert alert-danger">{{$message}}</div>
+                                                @enderror
+                                            </div>
+
+
+
+
+                                            <div class="form-group mb-0">
+                                                <div class="col-sm-offset-3 col-sm-9">
+                                                    <button type="submit" class="btn btn-info ">Update</button>
+                                                    <button type="reset" class="btn btn-info ">cancel</button>
+                                                </div>
+
+
+                                            </div>
                                     </form>
                                 </div>
                             </div>
