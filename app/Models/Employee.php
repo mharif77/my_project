@@ -17,12 +17,13 @@ class Employee extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $guard = 'employee';
-    
-     protected $fillable = [
+    protected $fillable = [
         'name',
         'email',
-        'password'
+        'password',
+        'phone',
+        'photo',
+        'address',
     ];
 
     /**

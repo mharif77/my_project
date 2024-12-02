@@ -79,36 +79,90 @@
                             <div class="col-sm-12 col-xs-12">
                                 <div class="form-wrap">
                                     <form class="form-horizontal" method="post"
-                                        action="{{route('product.update', $product->id)}}">
+                                        action="{{route('employee.update', $employee->id)}}">
                                         @csrf
                                         @method ('PUT')
                                         <div class="form-group">
                                             <label for="exampleInputuname_4"
-                                                class="col-sm-3 control-label">Specialist</label>
+                                                class="col-sm-3 control-label">Name</label>
                                             <div class="col-sm-9">
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" name="product"
-                                                        value="{{$product->name}}" id="exampleInputuname_4"
+                                                    <input type="text" class="form-control" name="name"
+                                                        value="{{$employee->name}}" id="exampleInputuname_4"
                                                         placeholder="Username">
                                                     <div class="input-group-addon"><i class="icon-user"></i></div>
                                                 </div>
                                             </div>
                                         </div>
+
+
                                         <div class="form-group">
-                                            <label for="exampleInputEmail_4"
-                                                class="col-sm-3 control-label">Details</label>
+                                            <label for="exampleInputuname_4"
+                                                class="col-sm-3 control-label">phone</label>
                                             <div class="col-sm-9">
                                                 <div class="input-group">
-                                                    <textarea type="text" name="details" class="form-control"
-                                                        placeholder="Enter details"
-                                                        rows="10">{{$product->details}}</textarea>
-                                                        <div class="input-group-addon"><i class="icon-user"></i></div>
-
+                                                    <input type="text" class="form-control" name="phone"
+                                                        value="{{$employee->phone}}" id="exampleInputuname_4"
+                                                        placeholder="Username">
+                                                    <div class="input-group-addon"><i class="icon-user"></i></div>
                                                 </div>
                                             </div>
                                         </div>
 
+                                        <div class="form-group">
+                                            <label for="exampleInputuname_4"
+                                                class="col-sm-3 control-label">photo</label>
+                                            <div class="col-sm-9">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" name="photo"
+                                                        value="{{$employee->photo}}" id="exampleInputuname_4"
+                                                        placeholder="Username">
+                                                    <div class="input-group-addon"><i class="icon-user"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
 
+                                        <div class="form-group">
+                                            <label for="exampleInputuname_4"
+                                                class="col-sm-3 control-label">Email</label>
+                                            <div class="col-sm-9">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" name="email"
+                                                        value="{{$employee->Email}}" id="exampleInputuname_4"
+                                                        placeholder="Username">
+                                                    <div class="input-group-addon"><i class="icon-user"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputuname_4"
+                                                class="col-sm-3 control-label">password</label>
+                                            <div class="col-sm-9">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" name="password"
+                                                        value="{{$employee->password}}" id="exampleInputuname_4"
+                                                        placeholder="Username">
+                                                    <div class="input-group-addon"><i class="icon-user"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputuname_4"
+                                                class="col-sm-3 control-label">address</label>
+                                            <div class="col-sm-9">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" name="address"
+                                                        value="{{$employee->address}}" id="exampleInputuname_4"
+                                                        placeholder="Username">
+                                                    <div class="input-group-addon"><i class="icon-user"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                       
+                                        
 
                                         <div class="form-group mb-0">
                                             <div class="col-sm-offset-3 col-sm-9">

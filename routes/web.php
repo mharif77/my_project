@@ -1,5 +1,7 @@
 <?php
 
+EmployeeController
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -52,6 +54,7 @@ Route::middleware('auth:admin')->prefix('admin')->group( function () {
 
     Route::resource('/product', ProductController::class);
     Route::resource('/category', CategoryController::class);
+    Route::resource('employee', EmployeeController::class);
 
 });
 

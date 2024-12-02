@@ -35,11 +35,14 @@ class DatabaseSeeder extends Seeder
         //     ]);
 
 
-            // \App\Models\Employee::create(
-            //     [
-            //        'name' =>'MD RONI AHMED',
-            //        'email' => 'roni@gmail.com',
-            //        'password' => Hash::make('admin123')
-            //     ]);
+            \App\Models\Employee::create(
+                [
+                   'name' =>'MD RONI AHMED',
+                   'email' => 'roni@gmail.com',
+                   'phone'=> '01679504643',
+                   'address' => 'dhaka',
+                   'photo' => 'nophoto.jpg',
+                   'password' => Hash::make('admin123')
+                ]);
     }
 }

@@ -8,20 +8,20 @@
 		</li>
 
 		<li>
-			<a href="javascript:void(0);" data-toggle="collapse" data-target="#ecom_dr"><i
-					class="icon-basket-loaded mr-10"></i>Product<span class="pull-right"><i
+			<a href="javascript:void(0);" data-toggle="collapse" data-target="#emlist"><i
+					class="icon-basket-loaded mr-10"></i>Employees<span class="pull-right"><i
 						class="fa fa-fw fa-angle-down"></i></span></a>
-			<ul id="ecom_dr" class="collapse collapse-level-1">
+			<ul id="emlist" class="collapse collapse-level-1">
 				<li>
-					<a href="{{route('product.index')}}">All product</a>
+					<a href="{{route('employee.index')}}">Employees List</a>
 				</li>
 				<li>
-					<a href="{{route('product.create')}}">New product</a>
+					<a href="{{route('employee.create')}}">New Employee</a>
 				</li>
 			</ul>
 		</li>
-
-
+		
+		
 		<li>
 			<a href="javascript:void(0);" data-toggle="collapse" data-target="#cat"><i
 					class="icon-basket-loaded mr-10"></i>Catagory<span class="pull-right"><i
@@ -32,6 +32,21 @@
 				</li>
 				<li>
 					<a href="{{route('category.create')}}">New Catagory</a>
+				</li>
+			</ul>
+		</li>
+
+
+		<li>
+			<a href="javascript:void(0);" data-toggle="collapse" data-target="#ecom_dr"><i
+					class="icon-basket-loaded mr-10"></i>Product<span class="pull-right"><i
+						class="fa fa-fw fa-angle-down"></i></span></a>
+			<ul id="ecom_dr" class="collapse collapse-level-1">
+				<li>
+					<a href="{{route('product.index')}}">All product</a>
+				</li>
+				<li>
+					<a href="{{route('product.create')}}">New product</a>
 				</li>
 			</ul>
 		</li>

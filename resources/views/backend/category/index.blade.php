@@ -102,7 +102,7 @@
 														@csrf
 														@method('DELETE')
 														<a href="{{route('category.show', $item->id)}}"
-															class="btn btn-info">show</a>
+															class="btn btn-success">show</a>
 
 														<a href="{{route('category.edit', $item->id)}}"
 															class="btn btn-info">Edit</a>

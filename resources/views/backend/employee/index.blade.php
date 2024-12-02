@@ -81,8 +81,12 @@
 												<thead>
 													<tr>
                                                         <th>ID</th>
-														<th>product Name</th>
-														<th>Details</th>
+														<th>Name</th>
+														<th>Phone</th>
+														<th>Photo</th>
+														<th>email</th>
+														<th>password</th>
+														<th>address</th>
 														<th>Action</th>
 													</tr>
 												</thead>
@@ -92,12 +96,17 @@
                                                     <tr>
 														<td>{{$loop->iteration}}</td>
 														<td>{{$item->name}}</td>
-														<td>{{$item->details}}</td>
+														<td>{{$item->phone}}</td>
+														<td>{{$item->photo}}</td>
+														<td>{{$item->email}}</td>
+														<td>{{$item->password}}</td>
+														<td>{{$item->address}}</td>
+														
 														<td>
-														<a href="{{route('product.edit', $item->id)}}" class="btn btn-info">Edit</a>	
+														<a href="{{route('employee.edit', $item->id)}}" class="btn btn-info">Edit</a>	
 														  
 														
-														<form action="{{route('product.destroy', $item->id)}}" method="post">
+														<form action="{{route('employee.destroy', $item->id)}}" method="post">
 														@csrf
 														@method('DELETE')
 														<button class="btn btn-danger" type="submit" name="submit">Delete</button>

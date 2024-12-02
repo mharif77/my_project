@@ -168,9 +168,13 @@
                                                 <div class="col-sm-offset-3 col-sm-9">
                                                     <button type="submit" class="btn btn-info ">Submit</button>
                                                 </div>
+                                            </div>
+
+                                            <div class="form-group mb-0">
 
                                                 <div class="col-sm-offset-3 col-sm-9">
-                                                    <button type="reset" class="btn btn-info ">cancel</button>
+                                                    
+                                                    <button type="reset" class="btn btn-danger">cancel</button>
                                                 </div>
                                             </div>
                                     </form>

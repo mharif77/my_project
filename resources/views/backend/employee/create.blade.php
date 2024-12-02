@@ -69,7 +69,7 @@
             <div class="panel panel-default card-view">
                 <div class="panel-heading">
                     <div class="pull-left">
-                        <h6 class="panel-title txt-dark">New Product Form</h6>
+                        <h6 class="panel-title txt-dark">New employee Form</h6>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -78,11 +78,11 @@
                         <div class="row">
                             <div class="col-sm-12 col-xs-12">
                                 <div class="form-wrap">
-                                    <form class="form-horizontal" method="post" action="{{route('product.store')}}">
+                                    <form class="form-horizontal" method="post" action="{{route('employee.store')}}">
                                         @csrf
                                         <div class="form-group">
                                             <label for="exampleInputuname_4"
-                                                class="col-sm-3 control-label">Product</label>
+                                                class="col-sm-3 control-label">employee</label>
                                             <div class="col-sm-9">
                                                 <div class="input-group">
                                                     <input type="text" class="form-control" name="specialist"
@@ -93,7 +93,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail_4"
-                                                class="col-sm-3 control-label">Details</label>
+                                                class="col-sm-3 control-label">employees</label>
                                             <div class="col-sm-9">
                                                 <div class="input-group">
                                                     <textarea type="text" name="details" class="form-control"
