@@ -52,6 +52,38 @@
 		</li>
 
 
+
+		<li>
+			<a href="javascript:void(0);" data-toggle="collapse" data-target="#exlist"><i
+					class="icon-basket-loaded mr-10"></i>Expenses<span class="pull-right"><i
+						class="fa fa-fw fa-angle-down"></i></span></a>
+			<ul id="exlist" class="collapse collapse-level-1">
+				<li>
+					<a href="{{route('expense.index')}}">All expenses</a>
+				</li>
+				<li>
+					<a href="{{route('expense.create')}}">New expenses</a>
+				</li>
+			</ul>
+		</li>
+
+
+		
+		<li>
+			<a href="javascript:void(0);" data-toggle="collapse" data-target="#pplist"><i
+					class="icon-basket-loaded mr-10"></i>Purchases<span class="pull-right"><i
+						class="fa fa-fw fa-angle-down"></i></span></a>
+			<ul id="pplist" class="collapse collapse-level-1">
+				<li>
+					<a href="{{route('purchase.index')}}">All Purchase</a>
+				</li>
+				<li>
+					<a href="{{route('purchase.create')}}">New Purchase</a>
+				</li>
+			</ul>
+		</li>
+
+
 	</ul>
 
 </div>

@@ -1,6 +1,6 @@
 <?php
-
-
+use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\ProductController;
@@ -55,6 +55,8 @@ Route::middleware('auth:admin')->prefix('admin')->group( function () {
     Route::resource('/product', ProductController::class);
     Route::resource('/category', CategoryController::class);
     Route::resource('/employee', EmployeeController::class);
+    Route::resource('/expense', ExpenseController::class);
+    Route::resource('/purchase', PurchaseController::class);
 
 });
 
