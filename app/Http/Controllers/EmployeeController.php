@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backend;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -8,7 +8,7 @@ use App\Models\Product;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,15 +36,15 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required',
             'phone' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'email' => 'required',
-            'password' => 'required',
+            'password' => 'required | min:8 | confirmed',
             'address' => 'required',
 
 
         ]);
 
-        if ($image = $request->file('image')) {
+        if ($image = $request->file('photo')) {
             $destinationPath = 'images/';
             $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $postImage);
@@ -56,14 +56,14 @@ class ProductController extends Controller
         $employee = new Employee;
         $employee->name = $request->name;
         $employee->phone = $request->phone;
-        $employee->photo = $request->photo;
+        $employee->photo = $photo;
         $employee->email = $request->email;
-        $employee->password = $request->password;
+        $employee->password = bcrypt($request->password);
         $employee->address = $request->address;
        
 
         // return $specialist->save();
-        $product->save();
+        $employee->save();
 
 
         return redirect()->route('employee.index')->with('msg', "successfully created");
@@ -80,30 +80,28 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $product)
+    public function edit(Employee $employee)
     {
-        $categories = Category::orderBy('id', 'desc', )->get();
-        return view('backend.product.edit', compact('product', 'categories'));
+        return view('backend.employee.edit', compact('employee'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Employee $employee)
     {
 
         $request->validate([
             'name' => 'required',
-            'product_code' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'price' => 'required',
-            'quantity' => 'required',
-            'category_id' => 'required',
+            'phone' => 'required',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'email' => 'required',
+            'address' => 'required',
 
 
         ]);
 
-        if ($image = $request->file('image')) {
+        if ($image = $request->file('photo')) {
             $destinationPath = 'images/';
             $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $postImage);
@@ -112,18 +110,19 @@ class ProductController extends Controller
             $photo = 'images/nophoto.jpg';
         }
 
-        $product->name = $request->name;
-        $product->product_code = $request->product_code;
-        $product->image = $photo;
-        $product->price = $request->price;
-        $product->quantity = $request->quantity;
-        $product->category_id = $request->category_id;
+        $employee->name = $request->name;
+        $employee->phone = $request->phone;
+        $employee->photo = $photo;
+        $employee->email = $request->email;
+        $employee->password = $employee->password;
+        $employee->address = $request->address;
+       
 
         // return $specialist->save();
-        $product->update();
+        $employee->update();
 
 
-        return redirect()->route('employee.index')->with('msg', "successfully Updated");
+        return redirect()->route('employee.index')->with('msg', "successfully created");
     }
 
     /**
@@ -131,7 +130,7 @@ class ProductController extends Controller
      */
     public function destroy(Employee $employee)
     {
-        $product->delete();
+        $employee->delete();
 
         return redirect()->route('employee.index')->with('msg', 'Deleted Successfully');
     }

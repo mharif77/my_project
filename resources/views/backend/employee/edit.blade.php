@@ -79,7 +79,7 @@
                             <div class="col-sm-12 col-xs-12">
                                 <div class="form-wrap">
                                     <form class="form-horizontal" method="post"
-                                        action="{{route('employee.update', $employee->id)}}">
+                                        action="{{route('employee.update', $employee->id)}}" enctype="multipart/form-data">
                                         @csrf
                                         @method ('PUT')
                                         <div class="form-group">
@@ -114,7 +114,7 @@
                                                 class="col-sm-3 control-label">photo</label>
                                             <div class="col-sm-9">
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" name="photo"
+                                                    <input type="file" class="form-control" name="photo"
                                                         value="{{$employee->photo}}" id="exampleInputuname_4"
                                                         placeholder="Username">
                                                     <div class="input-group-addon"><i class="icon-user"></i></div>
@@ -135,27 +135,15 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="exampleInputuname_4"
-                                                class="col-sm-3 control-label">password</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control" name="password"
-                                                        value="{{$employee->password}}" id="exampleInputuname_4"
-                                                        placeholder="Username">
-                                                    <div class="input-group-addon"><i class="icon-user"></i></div>
-                                                </div>
-                                            </div>
-                                        </div>
 
                                         <div class="form-group">
                                             <label for="exampleInputuname_4"
                                                 class="col-sm-3 control-label">address</label>
                                             <div class="col-sm-9">
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" name="address"
-                                                        value="{{$employee->address}}" id="exampleInputuname_4"
-                                                        placeholder="Username">
+                                                    <textarea type="text" class="form-control" name="address"
+                                                        id="exampleInputuname_4"
+                                                        placeholder="Username">{{$employee->address}}</textarea>
                                                     <div class="input-group-addon"><i class="icon-user"></i></div>
                                                 </div>
                                             </div>
