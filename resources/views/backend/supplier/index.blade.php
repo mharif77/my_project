@@ -82,12 +82,11 @@
 									<thead>
 										<tr>
 											<th>ID</th>
-											<th>item_name</th>
-											<th>quantity</th>
-											<th>purchase_price</th>
-											<th>purchase_date</th>
 											<th>supplier_name</th>
-											<th>category</th>
+											<th>contact_number</th>
+											<th>Email</th>
+											<th>phone</th>
+											<th>supplier_id</th>
 											<th>Action</th>
 										</tr>
 									</thead>
@@ -96,23 +95,22 @@
 										@foreach($items as $item)
 											<tr>
 												<td>{{$loop->iteration}}</td>
-												<td>{{$item->item_name}}</td>
-												<td>{{$item->quantity}}</td>
-												<td>{{$item->purchase_price}}</td>
-												<td>{{$item->purchase_date}}</td>
 												<td>{{$item->supplier_name}}</td>
-												<td>{{$item->category->name}}</td>
+												<td>{{$item->contact_number}}</td>
+												<td>{{$item->email}}</td>
+												<td>{{$item->phone}}</td>
+												<td>{{$item->purchase->name}}</td>
 												<td>
 													
 
 
-													<form action="{{route('purchase.destroy', $item->id)}}" method="post">
+													<form action="{{route('supplier.destroy', $item->id)}}" method="post">
 														@csrf
 														@method('DELETE')
-														<a href="{{route('purchase.show', $item->id)}}"
+														<a href="{{route('supplier.show', $item->id)}}"
 														class="btn btn-info">Show</a>
 
-														<a href="{{route('purchase.edit', $item->id)}}"
+														<a href="{{route('supplier.edit', $item->id)}}"
 														class="btn btn-success">Edit</a>
 
 														<button class="btn btn-danger" type="submit"

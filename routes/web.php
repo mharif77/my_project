@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\EmployeeController;
@@ -57,6 +58,8 @@ Route::middleware('auth:admin')->prefix('admin')->group( function () {
     Route::resource('/employee', EmployeeController::class);
     Route::resource('/expense', ExpenseController::class);
     Route::resource('/purchase', PurchaseController::class);
+    Route::resource('/supplier', SupplierController::class);
+
 
 });
 

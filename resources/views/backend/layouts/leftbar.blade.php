@@ -39,7 +39,7 @@
 
 		<li>
 			<a href="javascript:void(0);" data-toggle="collapse" data-target="#ecom_dr"><i
-					class="icon-basket-loaded mr-10"></i>Product<span class="pull-right"><i
+					class="icon-basket-loaded mr-10" ></i>Product<span class="pull-right"><i
 						class="fa fa-fw fa-angle-down"></i></span></a>
 			<ul id="ecom_dr" class="collapse collapse-level-1">
 				<li>
@@ -79,6 +79,21 @@
 				</li>
 				<li>
 					<a href="{{route('purchase.create')}}">New Purchase</a>
+				</li>
+			</ul>
+		</li>
+
+
+		<li>
+			<a href="javascript:void(0);" data-toggle="collapse" data-target="#splist"><i
+					class="icon-basket-loaded mr-10"></i>Supplier<span class="pull-right"><i
+						class="fa fa-fw fa-angle-down"></i></span></a>
+			<ul id="splist" class="collapse collapse-level-1">
+				<li>
+					<a href="{{route('supplier.index')}}">Supplier Details</a>
+				</li>
+				<li>
+					<a href="{{route('supplier.create')}}">New Supplier</a>
 				</li>
 			</ul>
 		</li>

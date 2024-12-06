@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Purchase extends Model
 {
     protected $fillable = [
-        'item_name',
-        'quantity',
-        'purchase_price',
-        'purchase_date',
         'supplier_name',
-        'category_id',
+        'contact_number',
+        'email',
+        'phone',
+        'purchase_id',
+        
 
 
     ];
@@ -23,13 +23,8 @@ class Purchase extends Model
         return $this->hasMany(Product::class);
     }
 
-    public function category()
+    public function purchase()
     {
-        return $this->belongsTo(Category::class);
-    }
-
-    public function supplier()
-    {
-        return $this->belongsTo(Supplier::class);
+        return $this->belongsTo(Purchase::class);
     }
 }
