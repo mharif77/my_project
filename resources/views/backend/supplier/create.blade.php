@@ -82,7 +82,8 @@
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="exampleInputuname_4" class="col-sm-3 control-label">Supplier name</label>
+                                            <label for="exampleInputuname_4" class="col-sm-3 control-label">Supplier
+                                                name</label>
                                             <div class="col-sm-9">
                                                 <div class="input-group">
                                                     <input type="text" class="form-control" name="supplier_name"
@@ -94,12 +95,13 @@
 
 
                                         <div class="form-group">
-                                            <label for="exampleInputuname_4"
-                                                class="col-sm-3 control-label">contact number</label>
+                                            <label for="exampleInputuname_4" class="col-sm-3 control-label">contact
+                                                number</label>
                                             <div class="col-sm-9">
                                                 <div class="input-group">
                                                     <input type="text" class="form-control" name="contact_number"
-                                                        id="exampleInputuname_4" placeholder="Enter your contact_number">
+                                                        id="exampleInputuname_4"
+                                                        placeholder="Enter your contact_number">
                                                     <div class="input-group-addon"><i class="icon-user"></i></div>
                                                 </div>
                                             </div>
@@ -132,7 +134,7 @@
                                         </div>
 
 
-                                        
+
 
                                         <div class="form-group">
                                             <label for="exampleInputuname_4"
@@ -143,7 +145,7 @@
                                                     @foreach($purchases as $purchase)	
                                                         <option value="{{$purchase->id}}"
                                                             @selected(old('purchase_id') == $purchase->id)>
-                                                            {{$purchase->name}}
+                                                            {{$purchase->item_name}}
                                                         </option>
                                                     @endforeach
 
@@ -165,7 +167,7 @@
                                             <div class="form-group mb-0">
 
                                                 <div class="col-sm-offset-3 col-sm-9">
-                                                    
+
                                                     <button type="reset" class="btn btn-danger">cancel</button>
                                                 </div>
                                             </div>

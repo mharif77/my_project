@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Purchase;
+
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 
@@ -41,7 +42,7 @@ class SupplierController extends Controller
 
         ]);
 
-       
+
 
         $supplier = new Supplier;
         $supplier->supplier_name = $request->supplier_name;
