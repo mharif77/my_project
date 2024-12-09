@@ -79,7 +79,7 @@
                             <div class="col-sm-12 col-xs-12">
                                 <div class="form-wrap">
                                     <form class="form-horizontal" method="post"
-                                        action="{{route('purchase.update', $purchase->id)}}">
+                                        action="{{route('supplier.update', $supplier->id)}}">
                                         @csrf
                                         @method('PUT')
                                         <div class="form-group">
@@ -87,7 +87,7 @@
                                             <div class="col-sm-9">
                                                 <div class="input-group">
                                                     <input type="text" class="form-control" name="supplier_name"
-                                                        id="exampleInputuname_4" value="{{$purchase->supplier_name}}"
+                                                        id="exampleInputuname_4" value="{{$supplier->supplier_name}}"
                                                         placeholder="Enter your item name">
                                                     <div class="input-group-addon"><i class="icon-user"></i></div>
                                                 </div>
@@ -100,7 +100,7 @@
                                                 class="col-sm-3 control-label">contact_number</label>
                                             <div class="col-sm-9">
                                                 <div class="input-group">
-                                                    <input type="text" value="{{$purchase->contact_number}}"
+                                                    <input type="text" value="{{$supplier->contact_number}}"
                                                         class="form-control" name="contact_number" id="exampleInputuname_4"
                                                         placeholder="Enter your contact_number">
                                                     <div class="input-group-addon"><i class="icon-user"></i></div>
@@ -113,7 +113,7 @@
                                                 class="col-sm-3 control-label">email</label>
                                             <div class="col-sm-9">
                                                 <div class="input-group">
-                                                    <input type="text" value="{{$purchase->email}}"
+                                                    <input type="text" value="{{$supplier->email}}"
                                                         class="form-control" name="email"
                                                         id="exampleInputuname_4" placeholder="Enter your email">
                                                     <div class="input-group-addon"><i class="icon-user"></i></div>
@@ -128,7 +128,7 @@
                                                 class="col-sm-3 control-label">phone</label>
                                             <div class="col-sm-9">
                                                 <div class="input-group">
-                                                    <input type="text" value="{{$purchase->phone}}" class="form-control"
+                                                    <input type="text" value="{{$supplier->phone}}" class="form-control"
                                                         name="phone" id="exampleInputuname_4" placeholder="Enter your  phone">
                                                     <div class="input-group-addon"><i class="icon-user"></i></div>
                                                 </div>
